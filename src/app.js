@@ -6,14 +6,35 @@ import {createStore, applyMiddleware} from 'redux'
 import createLogger from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 import rootReducer from './redux/reducers/rootReducer'
-const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, createLogger))
+
+import RootRouter from './router'
+//import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+//import createHistory from 'history/createBrowserHistory'
+
+//const history = createHistory()
+//const middleware = routerMiddleware(history)
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
+const store = createStore(
+	rootReducer, 
+	applyMiddleware(
+		thunkMiddleware, 
+		createLogger,
+	)
+)
 
 
 class App extends Component {
 
 	render(){
-
-		return <div>hello yt</div>
+		return <Provider store={store}>
+			 <RootRouter />
+		</Provider>
 	}
 }
 
