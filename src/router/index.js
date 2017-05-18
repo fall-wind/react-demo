@@ -6,20 +6,29 @@ import {
   Link
 } from 'react-router-dom'
 
+import MenuContainer from '../containers/menuContainer/MenuContainer'
+import Topbar from '../containers/topbar/TopBar'
+import { Menu, Icon } from 'antd';
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
+
+
+const totalHeight = document.body.clientHeight
+
 const RootRouter = () => (
   <Router>
-    <div>
-      <ul>
-        <li><Link to="/">首页</Link></li>
-        <li><Link to="/about">关于</Link></li>
-        <li><Link to="/topics">主题列表</Link></li>
-      </ul>
-
-      <hr/>
-
-      <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
-      <Route path="/topics" component={Topics}/>
+    <div className="app-container">
+        <div className="top-container">
+            <Topbar className/>
+        </div>
+        <div className="body-container" style={{height: totalHeight - 60}}>
+            <MenuContainer className="menu-container"/>
+            <div className="content-container">
+                <Route exact path="/" component={Home}/>
+                <Route path="/about" component={About}/>
+                <Route path="/topics" component={Topics}/>
+            </div>
+        </div>
     </div>
   </Router>
 )

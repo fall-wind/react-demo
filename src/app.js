@@ -7,6 +7,8 @@ import createLogger from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 import rootReducer from './redux/reducers/rootReducer'
 
+import './styles/index.less'
+
 import RootRouter from './router'
 //import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 //import createHistory from 'history/createBrowserHistory'
