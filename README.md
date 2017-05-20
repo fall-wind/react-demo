@@ -70,14 +70,55 @@ the selector function used to compute new props from state, props, and dispatch.
 
 
 
-## 客户端数据库 rxdb
+# 客户端数据库 rxdb
 // TODO  
 // 不太会用，照着demo抄了一遍  
 // 现在控制台报的都是404的错
 
+大致的步骤： 
+
+- 创建数据库
+- 创建collection
+- 这个时候就可以进行操作了
+
+结构描述
+
+- 使用Schema定义数据结构
+- encrypted:true；加密模式
+- primary: true；主键
+
 
 ## 样式
 ### 使用css module
+在webpack.config.js的less配置中：  
+
+- 在src/styles中写入全局的样式
+- 除去node_modules和src中的文件，使用css module解析
+
+```
+{
+            test: /\.less$/,
+            exclude: [
+                path.resolve(__dirname, 'src/styles'),
+                path.resolve(__dirname, 'node_modules')
+            ],
+            loader: 'style-loader!css-loader?modules&localIdentName=[name]__[local]!less-loader?sourceMap=true'
+        }, {
+            test: /\.less$/,
+            include: [path.resolve(__dirname, 'src/styles'),
+                path.resolve(__dirname, 'node_modules')],
+            loader: 'style-loader!css-loader!less-loader?sourceMap=true'
+        }
+```
+暂定
+
+
+
+
+
+#服务端
+//TODO
+
 
 
 

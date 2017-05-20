@@ -12,6 +12,7 @@ class HeroList extends Component {
         this.editHero = this.editHero.bind(this);
         this.deleteHero = this.deleteHero.bind(this);
     }
+
     async componentDidMount() {
         const db = await Database.get();
 
@@ -28,6 +29,7 @@ class HeroList extends Component {
         });
         this.subs.push(sub);
     }
+
     componentWillUnmount() {
         this.subs.forEach(sub => sub.unsubscribe());
     }
@@ -36,7 +38,10 @@ class HeroList extends Component {
         console.log('delete hero:');
         console.dir(hero);
     }
-    async editHero(hero) {}
+
+    async editHero(hero) {
+
+    }
 
     render() {
         return (
