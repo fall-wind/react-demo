@@ -1,14 +1,14 @@
+import PropTypes from 'prop-types'
 import React,{Component} from 'react'
-import Home from './containers/home'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux' 
 import {createStore, applyMiddleware} from 'redux'
 import createLogger from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 import rootReducer from './redux/reducers/rootReducer'
-
+//to fixed regeneratorRuntime is not defined
+import 'babel-polyfill'
 import './styles/index.less'
-
 import RootRouter from './router'
 //import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 //import createHistory from 'history/createBrowserHistory'

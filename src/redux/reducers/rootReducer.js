@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
-import home from '../../containers/home/homeReducer'
+import topics from '../../containers/topics/topicsReducer'
+import topicDetail from '../../containers/topicDetail/topicDetailReducer'
 //import {routerReducer} from 'react-router-redux'
 const rootReducer = combineReducers({
-	home
+	topics,
+	topicDetail,
 })
 
 

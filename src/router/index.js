@@ -1,16 +1,17 @@
 import React from 'react'
-import Home from '../containers/home'
+import Topics from '../containers/topics/Topics'
+import TopicDetail from '../containers/topicDetail/TopicDetail.js'
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
-
+import PropTypes from 'prop-types'
 import MenuContainer from '../containers/menuContainer/MenuContainer'
 import Topbar from '../containers/topbar/TopBar'
-import { Menu, Icon } from 'antd';
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
+import { Menu, Icon } from 'antd'
+const SubMenu = Menu.SubMenu
+const MenuItemGroup = Menu.ItemGroup
 
 
 const totalHeight = document.body.clientHeight
@@ -24,9 +25,10 @@ const RootRouter = () => (
         <div className="body-container" style={{height: totalHeight - 60}}>
             <MenuContainer className="menu-container"/>
             <div className="content-container">
-                <Route exact path="/" component={Home}/>
                 <Route path="/about" component={About}/>
-                <Route path="/topics" component={Topics}/>
+                <Route exact path="/" component={OtherTopics}/>
+                <Route path="/topics" component={Topics} />
+                <Route path="/topic/:id" component={TopicDetail}/>
             </div>
         </div>
     </div>
@@ -39,7 +41,7 @@ const About = () => (
   </div>
 )
 
-const Topics = ({ match }) => (
+const OtherTopics = ({ match }) => (
   <div>
     <h2>主题列表</h2>
     <ul>
@@ -73,5 +75,4 @@ const Topic = ({ match }) => (
   </div>
 )
 
-console.log('try push code to git')
 export default RootRouter
