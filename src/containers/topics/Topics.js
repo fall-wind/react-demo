@@ -21,11 +21,11 @@ class Topics extends Component {
 
     handleTopicsListItemClick(id){
         const {history} = this.props
-        console.log(id,'will jump')
         history.push(`/topic/${id}`)
     }
 
     render() {
+        console.log('what????')
         const {history,topicsList} = this.props
 
         return <div className={styles['home-container']}>

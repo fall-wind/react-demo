@@ -14,15 +14,15 @@ const MenuList = [
         title:'列表',
         subMenuList:[
             {
-                title:'复制过来的',
+                title:'炫酷屌炸天的d3111',
                 to:'/'
             },
             {
-                title:'关于',
+                title:'不一般的canvas',
                 to:'/about'
             },
             {
-                title:'文章列表',
+                title:'cnode文章列表',
                 to:'/topics'
             }
         ]
@@ -32,7 +32,7 @@ const MenuList = [
 class MenuContainer extends React.Component {
 
     handleClick = (e) => {
-        console.log('click ', e)
+
     }
 
     render() {
@@ -45,7 +45,7 @@ class MenuContainer extends React.Component {
                 mode="inline"
             >
             {MenuList.map((item,index) => {
-                return <SubMenu key={index} title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
+                return <SubMenu key={index} title={<span><Icon type="mail" /><span>{item.title}</span></span>}>
                     {item.subMenuList.map((element,i) => <Menu.Item key={`${index}_${i}`}>
                             <Link to={element.to}>{element.title}</Link>
                         </Menu.Item>)}

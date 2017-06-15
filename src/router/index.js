@@ -1,6 +1,4 @@
 import React from 'react'
-import Topics from '../containers/topics/Topics'
-import TopicDetail from '../containers/topicDetail/TopicDetail.js'
 import {
   BrowserRouter as Router,
   Route,
@@ -9,6 +7,10 @@ import {
 import PropTypes from 'prop-types'
 import MenuContainer from '../containers/menuContainer/MenuContainer'
 import Topbar from '../containers/topbar/TopBar'
+import Topics from '../containers/topics/Topics'
+import TopicDetail from '../containers/topicDetail/TopicDetail.js'
+import CanvasTry from '../containers/canvastry/CanvasTry.js'
+
 import { Menu, Icon } from 'antd'
 const SubMenu = Menu.SubMenu
 const MenuItemGroup = Menu.ItemGroup
@@ -25,7 +27,7 @@ const RootRouter = () => (
         <div className="body-container" style={{height: totalHeight - 60}}>
             <MenuContainer className="menu-container"/>
             <div className="content-container">
-                <Route path="/about" component={About}/>
+                <Route path="/about" component={CanvasTry}/>
                 <Route exact path="/" component={OtherTopics}/>
                 <Route path="/topics" component={Topics} />
                 <Route path="/topic/:id" component={TopicDetail}/>
@@ -43,7 +45,7 @@ const About = () => (
 
 const OtherTopics = ({ match }) => (
   <div>
-    <h2>主题列表</h2>
+    <h2>主题列表111ddd</h2>
     <ul>
       <li>
         <Link to={`${match.url}/rendering`}>
