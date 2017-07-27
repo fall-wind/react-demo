@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux'
 //import * as Database from '_rxdb'
 import * as HomeAction from './topicsAction'
 import styles from './topics.less'
+import {Spin} from 'antd'
 
 const state = (state) => state.topics
 
@@ -15,8 +16,12 @@ class Topics extends Component {
     }
 
     componentDidMount(){
-        this.homeAction.getcnodeData()
-        console.log(this.props)
+        //this.homeAction.getcnodeData()
+        const {dispatch} = this.props
+        dispatch({
+            type:'HOME_try'
+        })
+        //console.log(this.props)
     }
 
     handleTopicsListItemClick(id){
@@ -28,15 +33,18 @@ class Topics extends Component {
         console.log('what????')
         const {history,topicsList} = this.props
 
-        return <div className={styles['home-container']}>
-            <div className={styles['topicsList-div']}>
-                {topicsList.map(item => <TopicsListItem
-                        key={item.id}
-                        {...item} 
-                        handleTopicsListItemClick={::this.handleTopicsListItemClick}
-                />)}
+        return (
+            <div className={styles['home-container']}>
+                <div className={styles['topicsList-div']}>
+                    {topicsList.map(item => <TopicsListItem
+                                                key={item.id}
+                                                {...item} 
+                                                handleTopicsListItemClick={::this.handleTopicsListItemClick}
+                                            />)
+                    }
+                </div>
             </div>
-		</div>
+        )
     }
 }
 

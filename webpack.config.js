@@ -49,6 +49,11 @@ var config = {
             '_containers': path.join(rootPath, "./src/containers")
         }
     },
+    devServer: {
+        //host: 'localhost',
+        //port: 6666,
+        historyApiFallback: true
+    },
     /*  plugins: [
      new webpack.DllReferencePlugin({
      context: __dirname,

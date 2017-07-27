@@ -2,6 +2,7 @@
 
 # react-demo
 用webpack和babel构建react、react-redux、react-router应用；  
+加入了redux-obervable中间件    
 使用css-module书写样式； 
  
 具体文件参见[docs目录下的文档](./docs/README.md)  
