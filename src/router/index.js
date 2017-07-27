@@ -4,7 +4,6 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import MenuContainer from '../containers/menuContainer/MenuContainer'
 import Topbar from '../containers/topbar/TopBar'
 import Topics from '../containers/topics/Topics'

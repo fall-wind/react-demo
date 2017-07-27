@@ -8,6 +8,10 @@ import 'babel-polyfill'
 import './styles/index.less'
 import RootRouter from './router'
 import store from './store'
+import style from './styles/config.less';
+
+//取到css内的变量
+console.log(style.primaryColor,'ssss');
 
 import {
   BrowserRouter as Router,

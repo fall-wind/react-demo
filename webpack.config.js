@@ -12,36 +12,51 @@ var config = {
     },
     devtool: 'source-map',
     module: {
-        loaders: [{
-            test: /.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2015', 'react', "stage-0"],
-                plugins: [
-                    "transform-object-rest-spread",
-                    "transform-decorators-legacy", ["import", {
-                        "libraryName": "antd",
-                        "style": true
-                    }]
-                ]
+        rules: [
+            {
+                test: /\.js$/,
+                enforce: "pre",
+                loader: "eslint-loader",
+                exclude: /node_modules/,
+                options: {
+                    emitWarning: true,
+                    emitError: false,
+                    //failOnWarning: false,
+                    //failOnError: true,
+                    useEslintrc: false,
+                    configFile: path.join(__dirname, ".eslintrc")
+                }
+            },{
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015', 'react', "stage-0"],
+                    plugins: [
+                        "transform-object-rest-spread",
+                        "transform-decorators-legacy", ["import", {
+                            "libraryName": "antd",
+                            "style": true
+                        }]
+                    ]
+                }
+            }, {
+                test: /\.css$/,
+                loader: ['style-loader', 'css-loader'],
+            }, {
+                test: /\.less$/,
+                exclude: [
+                    path.resolve(__dirname, 'src/styles'),
+                    path.resolve(__dirname, 'node_modules')
+                ],
+                loader: 'style-loader!css-loader?modules&localIdentName=[name]__[local]!less-loader?sourceMap=true'
+            }, {
+                test: /\.less$/,
+                include: [path.resolve(__dirname, 'src/styles'),
+                    path.resolve(__dirname, 'node_modules')],
+                loader: 'style-loader!css-loader!less-loader?sourceMap=true'
             }
-        }, {
-            test: /\.css$/,
-            loader: ['style-loader', 'css-loader'],
-        }, {
-            test: /\.less$/,
-            exclude: [
-                path.resolve(__dirname, 'src/styles'),
-                path.resolve(__dirname, 'node_modules')
-            ],
-            loader: 'style-loader!css-loader?modules&localIdentName=[name]__[local]!less-loader?sourceMap=true'
-        }, {
-            test: /\.less$/,
-            include: [path.resolve(__dirname, 'src/styles'),
-                path.resolve(__dirname, 'node_modules')],
-            loader: 'style-loader!css-loader!less-loader?sourceMap=true'
-        }]
+        ],     
     },
     resolve: {
         alias: {
@@ -49,6 +64,9 @@ var config = {
             '_containers': path.join(rootPath, "./src/containers")
         }
     },
+    // eslint: {
+    //     configFile: './.eslintrc'
+    // },
     devServer: {
         //host: 'localhost',
         //port: 6666,
