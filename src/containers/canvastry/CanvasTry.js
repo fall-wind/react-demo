@@ -1,29 +1,26 @@
-import React,{Component} from 'react'
-import styles from './canvasTry.less'
-import {connect} from 'react-redux'
-import {bindActionCreators} from 'redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import * as canvasTestAction from './canvasTryAction'
+import styles from './canvasTry.less'
 
-@connect(state =>  state.canvasTest)
-class CanvasTry extends Component{
-    constructor(props){
+@connect(state => state.canvasTest)
+class CanvasTry extends Component {
+    constructor(props) {
         super()
-        this.canvasTestAction = bindActionCreators(canvasTestAction,props.dispatch)
+        this.canvasTestAction = bindActionCreators(canvasTestAction, props.dispatch)
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.canvasTestAction.whyNotUnHMR(true)
     }
 
-    drawSomthing(){
-        
-    }
-
-    render(){
-        return <div className={styles['canvas-test-container']}>
-            <div id="canvas" className={styles['canvas-show-stage']}>
+    render() {
+        return (
+            <div className={styles['canvas-test-container']}>
+                <div id="canvas" className={styles['canvas-show-stage']} />
             </div>
-        </div>
+        )
     }
 }
 

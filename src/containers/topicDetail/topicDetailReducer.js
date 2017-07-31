@@ -1,17 +1,17 @@
 const initState = {
-    topic:{}
+    topic: {}
 }
 
-export default function topicDetail (state = initState,action){
-    switch(action.type){
-        case "TOPIC_DETAIL_getTopicDetail":
+export default function topicDetail(state = initState, action) {
+    switch (action.type) {
+        case 'TOPIC_DETAIL_getTopicDetail':
             return {
                 ...state,
-                topic:{
+                topic: {
                     ...action.data
                 }
             }
         default :
             return state
     }
-} 
+}

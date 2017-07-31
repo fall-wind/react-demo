@@ -1,17 +1,18 @@
 const initState = {
-    change:false
+    change: false
 }
 
-export default function canvasTest(state = initState,action){
-
-    switch(action.type){
-        case "CANVAS_testChange":{
+function canvasTest(state = initState, action) {
+    switch (action.type) {
+        case 'CANVAS_testChange': {
             return {
                 ...state,
-                change:action.value
+                change: action.value
             }
         }
         default :
             return state
     }
 }
+
+export default canvasTest

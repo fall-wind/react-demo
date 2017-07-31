@@ -1,17 +1,15 @@
-import {createStore, applyMiddleware, compose} from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import rootReducer from '../redux/reducers/rootReducer'
-import createLogger from 'redux-logger'
-import rootEpic from '../epics'
 import { createEpicMiddleware } from 'redux-observable'
+import createLogger from 'redux-logger'
+import rootReducer from '../redux/reducers/rootReducer'
+import rootEpic from '../epics'
 
 const epicMiddleware = createEpicMiddleware(rootEpic)
 
-
-
 function configureStore() {
 	const store = createStore(
-		rootReducer, 
+		rootReducer,
 		compose(
 			applyMiddleware(
 				epicMiddleware,
@@ -19,9 +17,8 @@ function configureStore() {
 				createLogger,
 			)
 		)
-		
 	)
-    return store;
+    return store
 }
 
 export default configureStore()
