@@ -1,14 +1,9 @@
-import React,{Component} from 'react'
+import React from 'react'
 
-class TopBar extends Component{
+const topBar = () => (
+    <div>
+        我是标题
+    </div>
+)
 
-    render() {
-        return (
-            <div>
-                我是标题
-            </div>
-        )
-    }
-}
-
-export default TopBar
+export default topBar

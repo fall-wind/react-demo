@@ -1,9 +1,12 @@
-import {combineReducers} from 'redux'
-import home from '../../containers/home/homeReducer'
-//import {routerReducer} from 'react-router-redux'
+import { combineReducers } from 'redux'
+import topics from '../../containers/topics/topicsReducer'
+import topicDetail from '../../containers/topicDetail/topicDetailReducer'
+import canvasTest from '../../containers/canvastry/canvasTryReducer'
+// import {routerReducer} from 'react-router-redux'
 const rootReducer = combineReducers({
-	home
+	topics,
+	topicDetail,
+	canvasTest
 })
-
 
 export default rootReducer
