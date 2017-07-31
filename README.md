@@ -5,8 +5,9 @@
 加入了redux-obervable中间件    
 使用css-module书写样式； 
  
-具体文件参见[docs目录下的文档](./docs/README.md)  
+具体文件参见[docs目录下的文档](./docs/README.md)
 ps：写得很lower，希望您能留下宝贵的意见；  
+ps： 已废弃~~
 
 邮箱：yangtuo0730@gmail.com
 
@@ -16,13 +17,13 @@ ps：写得很lower，希望您能留下宝贵的意见；
 任待解决的问题：
 
 - 这个demo要做什么
-- dll打包的问题
 - webpack升级到3
 
 
 已解决的问题：
 
 - eslint规范代码
+- 解决如何dll打包的问题，并将webpack文分成prod和dev的
 
 
 

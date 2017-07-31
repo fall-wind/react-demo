@@ -4,8 +4,9 @@
   "description": "use webpack+babel+redux set up react project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --progress --colors --hot --history-api-fallback --content-base dist"
+    "dll": "webpack --config webpack.dll.config.js",
+    "start": "webpack-dev-server --progress --colors --hot --history-api-fallback --content-base dist",
+    "build": "webpack --progress --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
