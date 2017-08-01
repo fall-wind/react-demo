@@ -11,6 +11,10 @@ const vendors = [
   'react-router-redux',
   'redux',
   'antd',
+  'redux-logger',
+  'redux-observable',
+  'redux-thunk',
+  'rxjs',
 ];
 
 module.exports = {

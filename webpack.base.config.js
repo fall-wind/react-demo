@@ -31,16 +31,6 @@ const config = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-                query: {
-                    presets: ['es2015', 'react', "stage-0"],
-                    plugins: [
-                        "transform-object-rest-spread",
-                        "transform-decorators-legacy", ["import", {
-                            "libraryName": "antd",
-                            "style": true
-                        }]
-                    ]
-                }
             }, {
                 test: /\.css$/,
                 loader: ['style-loader', 'css-loader'],
