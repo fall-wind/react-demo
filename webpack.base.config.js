@@ -12,6 +12,12 @@ const config = {
         filename: 'index.bundle.js',
         publicPath: '/'
     },
+    resolve: {
+        alias: {
+            '_containers': path.join(rootPath, "./src/containers"),
+            '_util': path.join(rootPath, "./src/util")
+        }
+    },
     module: {
         rules: [
             {

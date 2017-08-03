@@ -11,3 +11,8 @@ export const getcnodeData = () => async dispatch => {
         })
     }
 }
+
+export const changeLoadingStatus = loadingValue => ({
+    type: 'HOME_changeLoadingStatus',
+    loadingValue
+})

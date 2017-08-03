@@ -9,8 +9,9 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/mapTo'
 import 'rxjs/add/operator/mergeMap'
-import { fetchEpics } from '_containers/topics/topicsEpics'
+import * as topicsAllEpics from '_containers/topics/topicsEpics'
 
+// 将所有的epic combineEpics进来
 export default combineEpics(
-    fetchEpics
+    ...Object.values(topicsAllEpics)
 )

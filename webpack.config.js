@@ -9,11 +9,6 @@ const ROOT_PATH = path.resolve(__dirname)
 
 const devConfig = merge(baseConfig, {
     devtool: 'eval-source-map',
-    resolve: {
-        alias: {
-            '_containers': path.join(rootPath, "./src/containers")
-        }
-    },
     devServer: {
         historyApiFallback: true
     },
