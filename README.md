@@ -17,13 +17,14 @@ ps： 已废弃~~
 任待解决的问题：
 
 - 这个demo要做什么
-- webpack升级到3
+
 
 
 已解决的问题：
 
 - eslint规范代码
 - 解决如何dll打包的问题，并将webpack文分成prod和dev的
+- webpack升级到3 //其实什么都没改
 
 
 

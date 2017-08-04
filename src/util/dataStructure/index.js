@@ -1,6 +1,7 @@
 import LinkList from './linkList'
+import Tree from './tree'
 
-console.log(LinkList)
 export default {
-    LinkList
+    LinkList,
+    Tree,
 }

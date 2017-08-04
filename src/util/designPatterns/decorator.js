@@ -22,5 +22,3 @@ function toLowerDecorator(inner) {
 // const component = toLowerDecorator(myComponentFactory())
 // component.setValue('222')
 // component.printValue('SSSSuu')
-
-
