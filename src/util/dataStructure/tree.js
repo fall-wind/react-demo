@@ -52,13 +52,13 @@ class Tree {
                 const item = queue.shift()
                 callback(item)
                 nodes.push(item)
-                queue = queue.concat(nodes)
+                queue = queue.concat(item.children)
             }
         }
         return nodes
     }
 
-    contains(callback, traversal) {
+    contains(callback, traversal = this.deepTraversal) {
         traversal.call(this, callback)
     }
 
@@ -78,7 +78,6 @@ class Tree {
         }
 
         this.contains(callback, traversal)
-        console.log(parent, '1111')
 
         if (parent) {
             parent.children.push(node)
