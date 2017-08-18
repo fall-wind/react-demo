@@ -49,8 +49,10 @@ const config = {
                 loader: 'style-loader!css-loader?modules&localIdentName=[name]__[local]!less-loader?sourceMap=true'
             }, {
                 test: /\.less$/,
-                include: [path.resolve(__dirname, 'src/styles'),
-                    path.resolve(__dirname, 'node_modules')],
+                include: [
+                    path.resolve(__dirname, 'src/styles'),
+                    path.resolve(__dirname, 'node_modules')
+                ],
                 loader: 'style-loader!css-loader!less-loader?sourceMap=true'
             }
         ],     
