@@ -1,5 +1,5 @@
 import React from 'react'
-import { dataStructure } from '_util'
+// import { dataStructure } from '_util'
 
 // const LinkList = dataStructure.LinkList
 // const Tree = dataStructure.Tree
