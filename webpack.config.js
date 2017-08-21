@@ -1,83 +1,27 @@
-var webpack = require('webpack')
-var path = require('path')
-var rootPath = path.resolve(__dirname)
+const webpack = require('webpack')
+const path = require('path')
+const HtmlwebpackPlugin = require('html-webpack-plugin')
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.base.config.js')
 
-var config = {
-    entry: path.resolve(__dirname, 'src/app.js'),
+const ROOT_PATH = path.resolve(__dirname)
 
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'index.bundle.js',
-        publicPath: '/'
-    },
-    devtool: 'source-map',
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                enforce: "pre",
-                loader: "eslint-loader",
-                exclude: /node_modules/,
-                options: {
-                    emitWarning: true,
-                    emitError: false,
-                    //failOnWarning: false,
-                    //failOnError: true,
-                    useEslintrc: false,
-                    configFile: path.join(__dirname, ".eslintrc")
-                }
-            },{
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015', 'react', "stage-0"],
-                    plugins: [
-                        "transform-object-rest-spread",
-                        "transform-decorators-legacy", ["import", {
-                            "libraryName": "antd",
-                            "style": true
-                        }]
-                    ]
-                }
-            }, {
-                test: /\.css$/,
-                loader: ['style-loader', 'css-loader'],
-            }, {
-                test: /\.less$/,
-                exclude: [
-                    path.resolve(__dirname, 'src/styles'),
-                    path.resolve(__dirname, 'node_modules')
-                ],
-                loader: 'style-loader!css-loader?modules&localIdentName=[name]__[local]!less-loader?sourceMap=true'
-            }, {
-                test: /\.less$/,
-                include: [path.resolve(__dirname, 'src/styles'),
-                    path.resolve(__dirname, 'node_modules')],
-                loader: 'style-loader!css-loader!less-loader?sourceMap=true'
-            }
-        ],     
-    },
-    resolve: {
-        alias: {
-            '_rxdb': path.join(rootPath, "./src/rxdb"),
-            '_containers': path.join(rootPath, "./src/containers")
-        }
-    },
-    // eslint: {
-    //     configFile: './.eslintrc'
-    // },
+const devConfig = merge(baseConfig, {
+    devtool: 'eval-source-map',
     devServer: {
-        //host: 'localhost',
-        //port: 6666,
         historyApiFallback: true
     },
-    /*  plugins: [
-     new webpack.DllReferencePlugin({
-     context: __dirname,
-     manifest: require('./manifest.json'),
-     }),
-     ],*/
-}
+    plugins: [
+        new webpack.DllReferencePlugin({
+            manifest: require(path.resolve(ROOT_PATH, 'manifest.json')),
+            context: ROOT_PATH,
+        }),
+        new HtmlwebpackPlugin({
+            title: 'react-webpack-demo',
+            filename: 'index.html',
+            template: path.resolve(ROOT_PATH, 'dist', 'index.html')
+        })
+    ] 
+})
 
-module.exports = config
+module.exports = devConfig

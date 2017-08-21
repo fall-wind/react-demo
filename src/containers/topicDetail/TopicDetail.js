@@ -20,15 +20,13 @@ class TopicDetail extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.topic.content) {
+        if (nextProps.topic.content !== this.props.topic.content) {
             console.log('-------')
-            // window.document.getElementById('content').innerHTML = nextProps.topic.content
+            window.document.getElementById('content').innerHTML = nextProps.topic.content
         }
     }
 
     render() {
-        // const { topic } = this.props
-
         return (
             <div className={styles['topicDetail-container']}>
                 <div id="content" />

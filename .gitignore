@@ -1,10 +1,7 @@
-# Dependency directory
-node_modules
-
-# Debug log from npm
+.idea/
+node_modules/
+dist/
+*.iml
 npm-debug.log
-
-.idea
-
-react-demo.iml
-
+*.swp
+manifest.json

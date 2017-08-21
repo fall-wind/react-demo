@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 // to fixed regeneratorRuntime is not defined
-import 'babel-polyfill'
+// import 'babel-polyfill'
 import './styles/index.less'
 import RootRouter from './router'
 import store from './store'

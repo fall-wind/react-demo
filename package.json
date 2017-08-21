@@ -4,8 +4,9 @@
   "description": "use webpack+babel+redux set up react project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --progress --colors --hot --history-api-fallback --content-base dist"
+    "dll": "webpack --config webpack.dll.config.js",
+    "start": "webpack-dev-server --progress --colors --hot --history-api-fallback --content-base dist",
+    "build": "webpack --progress --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
@@ -35,12 +36,14 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
     "html-webpack-plugin": "^2.28.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
     "style-loader": "^0.17.0",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack": "3.0.0",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "antd": "^2.10.0",
