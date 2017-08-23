@@ -1,8 +1,9 @@
 const webpack = require('webpack')
 const path = require('path')
+
 const rootPath = path.resolve(__dirname)
 const ROOT_PATH = path.resolve(__dirname)
-const HtmlwebpackPlugin = require('html-webpack-plugin')
+// const HtmlwebpackPlugin = require('html-webpack-plugin')
 
 const config = {
     entry: path.resolve(__dirname, 'src/app.js'),
@@ -14,24 +15,24 @@ const config = {
     },
     resolve: {
         alias: {
-            '_containers': path.join(rootPath, "./src/containers"),
-            '_util': path.join(rootPath, "./src/util")
+            _containers: path.join(rootPath, './src/containers'),
+            _util: path.join(rootPath, './src/util')
         }
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                enforce: "pre",
-                loader: "eslint-loader",
+                enforce: 'pre',
+                loader: 'eslint-loader',
                 exclude: /node_modules/,
                 options: {
                     emitWarning: true,
                     emitError: false,
-                    //failOnWarning: false,
-                    //failOnError: true,
+                    // failOnWarning: false,
+                    // failOnError: true,
                     useEslintrc: false,
-                    configFile: path.join(__dirname, ".eslintrc")
+                    configFile: path.join(__dirname, '.eslintrc')
                 }
             },{
                 test: /\.js$/,

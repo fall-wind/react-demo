@@ -5,3 +5,4 @@ dist/
 npm-debug.log
 *.swp
 manifest.json
+tsconfig.json
