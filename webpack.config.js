@@ -9,7 +9,8 @@ const ROOT_PATH = path.resolve(__dirname)
 const devConfig = merge(baseConfig, {
     devtool: 'eval-source-map',
     devServer: {
-        historyApiFallback: true
+        historyApiFallback: true,
+        port: 3000,
     },
     plugins: [
         new webpack.DllReferencePlugin({
@@ -21,7 +22,7 @@ const devConfig = merge(baseConfig, {
             filename: 'index.html',
             template: path.resolve(ROOT_PATH, 'dist', 'index.html')
         })
-    ] 
+    ],
 })
 
 module.exports = devConfig

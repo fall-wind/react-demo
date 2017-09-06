@@ -34,7 +34,7 @@ const config = {
                     useEslintrc: false,
                     configFile: path.join(__dirname, '.eslintrc')
                 }
-            },{
+            }, {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
@@ -56,7 +56,7 @@ const config = {
                 ],
                 loader: 'style-loader!css-loader!less-loader?sourceMap=true'
             }
-        ],     
+        ],
     },
     plugins: [
         new webpack.DllReferencePlugin({

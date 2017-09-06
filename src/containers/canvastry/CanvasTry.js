@@ -13,6 +13,7 @@ class CanvasTry extends Component {
 
     componentDidMount() {
         this.canvasTestAction.whyNotUnHMR(true)
+        this.canvasTestAction.queryCanvasData()
     }
 
     render() {
