@@ -3,23 +3,16 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
-// import { Menu } from 'antd'
-import MenuContainer from '../containers/menuContainer/MenuContainer'
-import Topbar from '../containers/topbar/TopBar'
-import Topics from '../containers/topics/Topics'
-import TopicDetail from '../containers/topicDetail/TopicDetail.js'
-import CanvasTry from '../containers/canvastry/CanvasTry.js'
-import DataStructureTest from '../containers/dataStructureTest/DataStructureTest.js'
 
-// const SubMenu = Menu.SubMenu
-// const MenuItemGroup = Menu.ItemGroup
+import Login from '../containers/login/Login'
+import Home from '../containers/home/Home'
 
 const totalHeight = document.body.clientHeight
 
 const RootRouter = () => (
 	<Router>
 		<div className="app-container">
-			<div className="top-container">
+			{/* <div className="top-container">
 				<Topbar />
 			</div>
 			<div className="body-container" style={{ height: totalHeight - 60 }}>
@@ -30,7 +23,9 @@ const RootRouter = () => (
 					<Route path="/topics" component={Topics} />
 					<Route path="/topic/:id" component={TopicDetail} />
 				</div>
-			</div>
+			</div> */}
+			<Route exact path="/" component={Login} />
+			<Route path="/home" component={Home} />
 		</div>
 	</Router>
 )

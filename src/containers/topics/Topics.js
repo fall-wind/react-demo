@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import fetch from 'isomorphic-unfetch'
 import * as HomeAction from './topicsAction'
 import styles from './topics.less'
 // import { Spin } from 'antd'
@@ -14,12 +15,15 @@ class Topics extends Component {
         this.homeAction = bindActionCreators(HomeAction, props.dispatch)
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         // this.homeAction.getcnodeData()
         const { dispatch } = this.props
         dispatch({
             type: 'HOME_try'
         })
+        const res = await fetch('api/about')
+        const result = await res.json()
+        console.log(result, '????xxxjjsss')
     }
 
     handleTopicsListItemClick = id => {

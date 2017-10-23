@@ -12,7 +12,7 @@ function configureStore() {
 		rootReducer,
 		compose(
 			applyMiddleware(
-				epicMiddleware,
+				// epicMiddleware,
 				thunkMiddleware,
 				createLogger,
 			)

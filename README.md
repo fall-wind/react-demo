@@ -1,7 +1,7 @@
 # //TODO
 
 # react-demo
-用webpack和babel构建react、react-redux、react-router应用；  
+用webpack和babel构建react、react-redux、react-router应用； 
 加入了redux-obervable中间件    
 使用css-module书写样式； 
  
@@ -25,3 +25,8 @@ ps： 已废弃~~
 - eslint规范代码
 - 解决如何dll打包的问题，并将webpack文分成prod和dev的
 - webpack升级到3 //其实什么都没改
+
+
+## 个人的一些疑问 
+
+- 为什么需要生命周期这个概念

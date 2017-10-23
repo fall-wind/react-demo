@@ -11,7 +11,7 @@ import store from './store'
 // console.log(style.primaryColor,'ssss');
 const App = () => (
 	<Provider store={store} >
-			<RootRouter />
+		<RootRouter />
 	</Provider>
 )
 
